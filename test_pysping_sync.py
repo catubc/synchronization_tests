@@ -178,7 +178,7 @@ height, width, layers = [1280,1024,3]
 size= (height, width)
 
 # number of seconds per epoch
-duration = 3600 
+duration = 60 
 print (" New acquisition: Grabbing frames: ", capture_FPS*duration)
 
 # number of hours of recording

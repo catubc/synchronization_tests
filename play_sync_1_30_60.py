@@ -32,10 +32,13 @@ ser_led = serial.Serial(
 )
 
 # launch 
-duration2 = 10
+duration2 = 1800
 ctr=1
 pc_time_utc_sec = datetime.datetime.utcnow().timestamp()
-times_click = np.arange(60,3600,60)
+#times_click = np.arange(60,3600,60)
+#times_click = np.arange(5,30,55
+#times_click = [5,30,55]
+times_click = np.arange(1755)
 times_idx = 0
 times = []
 while True:
@@ -51,12 +54,12 @@ while True:
 		#beep(1)
 		times_idx+=1            
 	
-	if times_idx>=len(times_click):
-		break
+	#if times_idx>=len(times_click):
+#		break
 	
-	if (now -pc_time_utc_sec)> 3600:
+	if (now -pc_time_utc_sec)> duration2:
 		break
 
 print ("Times clicked: ", times)
-np.savetxt('/mnt/53abab64-8e58-435f-ae3f-45613b0ecb71/may_7/time_str_'+\
+np.savetxt('/mnt/53abab64-8e58-435f-ae3f-45613b0ecb71/may_12_60sectests/time_str_'+\
 			str(round(np.random.rand(),6))+'.txt',times)
